@@ -1,36 +1,24 @@
 package frc.robot;
 
-import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
-import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
-
-import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
-import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction;
 
 public class sysidrobot {
 
-    final double MaxSpeed = 6; // 6 meters per second desired top speed
-  final double MaxAngularRate = Math.PI; // Half a rotation per second max angular velocity
+  // final double MaxSpeed = 6; // 6 meters per second desired top speed
+  // final double MaxAngularRate = Math.PI; // Half a rotation per second max angular velocity
 
-    private Drivetrain m_drive = Swerve.drivetrain;
+  private Drivetrain m_drive = Swerve.drivetrain;
 
-    SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
-            .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
-    SwerveRequest.RobotCentric rdrive = new SwerveRequest.RobotCentric()
-            .withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+  // SwerveRequest.FieldCentric drive = new
+  // SwerveRequest.FieldCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
+  // SwerveRequest.RobotCentric rdrive = new
+  // SwerveRequest.RobotCentric().withDriveRequestType(DriveRequestType.OpenLoopVoltage);
 
-    CommandPS4Controller joystick =
-      new CommandPS4Controller(0); // My joystick
+  CommandPS4Controller joystick = new CommandPS4Controller(0); // My joystick
 
-    Telemetry logger = new Telemetry(MaxSpeed);
-
-
-    private void configureBindings() {}
+  // Telemetry logger = new Telemetry(MaxSpeed);
 
   private void configureCoBindings() {
     joystick.triangle().whileTrue(m_drive.SteersysIdQuasistatic(Direction.kForward));
@@ -48,9 +36,8 @@ public class sysidrobot {
     configureCoBindings();
   }
 
-    public Command getAutonomousCommand() {
-        // Do nothing
-        return m_drive.run(() -> {
-        });
-    }
+  public Command getAutonomousCommand() {
+    // Do nothing
+    return m_drive.run(() -> {});
+  }
 }

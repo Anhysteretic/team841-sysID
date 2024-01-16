@@ -7,7 +7,6 @@ import com.ctre.phoenix6.mechanisms.swerve.SwerveModuleConstants;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModuleConstants.SteerFeedbackType;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModuleConstantsFactory;
 import edu.wpi.first.math.util.Units;
-import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 
 public class Swerve {
 
@@ -155,5 +154,4 @@ public class Swerve {
 
   protected static final Drivetrain drivetrain =
       new Drivetrain(DrivetrainConstants, FrontLeft, FrontRight, BackLeft, BackRight);
-
 }
