@@ -33,6 +33,6 @@ public class SwerveSteerVoltageRequest implements SwerveRequest {
    */
   public SwerveSteerVoltageRequest withVoltage(double targetVoltage) {
     this.m_targetVoltage = targetVoltage;
-    return this;
+    return  this;
   }
 }
